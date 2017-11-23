@@ -1,0 +1,12 @@
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\bin\Debug\SchoolMall.Data.dll.config
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\bin\Debug\SchoolMall.Data.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\bin\Debug\SchoolMall.Data.pdb
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\bin\Debug\EntityFramework.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\bin\Debug\SchoolMall.Model.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\bin\Debug\SchoolMall.Model.pdb
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\bin\Debug\EntityFramework.xml
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\obj\Debug\SchoolMall.Data.csprojResolveAssemblyReference.cache
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\obj\Debug\SchoolMall.Data.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Data\obj\Debug\SchoolMall.Data.pdb

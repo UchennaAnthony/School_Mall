@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - BigBankAlert</title>
+    <link href="/Content/bootstrap.css" rel="stylesheet"/>
+<link href="/Content/site.css" rel="stylesheet"/>
+
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+    <link href="/Content/bootstrap.css" rel="stylesheet"/>
+    <link href="/Content/Site.css" rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Home/Index">Home</a></li>
+                    
+
+
+                </ul>
+                <div>
+                        <ul class="nav navbar-nav navbar-right">
+        <li><a href="/User/Registration/UserRegistration">Register</a></li>
+        <li><a href="/Security/Account/Login" id="loginLink">Log In</a></li>
+    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container body-content">
+    <div class="row">
+        
+<!DOCTYPE html>
+<!-- Template by Quackit.com -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BigBankAlert</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/Content/Web/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/Web/css/custom.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Logo and responsive toggle -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" href="/Home/Index">
+                <span class="glyphicon glyphicon-bitcoin"></span>
+                BigBankAlert
+            </a>
+        </div>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/Home/Index">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="btn-link">About</a>
+                </li>
+                <li>
+                    <a href="#">Products</a>
+                </li>
+            </ul>
+            <!-- Search -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/User/Registration/UserRegistration">Register</a></li>
+                <li><a href="/Security/Account/Login" id="loginLink">Log In</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+    <br/>
+    <div class="jumbotron feature">
+        <div class="container">
+            <h1><span class="glyphicon glyphicon-bitcoin"></span> It's The Big Bank Alert!</h1>
+            <p>We grow your money.</p>
+            <p><a class="btn btn-default" href="/User/Registration/UserRegistration">Register Now</a></p>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="container">
+        <!-- Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Invest In Quick cash
+                    <small>Very Reliable</small>
+                </h1>
+                <p>All you need to do is register today, activate your account by making a payment of #10,000 to the designated acount on your dashboard. Within one week, four of our financers will combine resources and pay your #40,000 for willing to be rich. Yes, be inspired don't be left out, the more you register, the more money you get. </p>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Feature Row -->
+        <div class="row">
+            <article class="col-md-4 article-intro">
+                <a href="#">
+                    <img class="img-responsive img-rounded" src="/Content/Web/img/img3.png" alt="Cash">
+                </a>
+                <h3>
+                    <a href="#">Quick Matching</a>
+                </h3>
+            </article>
+            <article class="col-md-4 article-intro">
+                <a href="#">
+                    <img class="img-responsive img-rounded" src="/Content/Web/img/img2.jpeg" alt="Cash">
+                </a>
+                <h3>
+                    <a href="#">Instant Payment</a>
+                </h3>
+             </article>
+            <article class="col-md-4 article-intro">
+                <a href="#">
+                    <img class="img-responsive img-rounded" src="/Content/Web/img/img1.jpg" alt="Cash">
+                </a>
+                <h3>
+                    <a href="#">Just register</a>
+                </h3>
+            </article>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="footer-blurb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 footer-blurb-item">
+                        <h3 style="color: white"><span class="glyphicon glyphicon-fire"></span> Make Money</h3>
+                        <p>Some Write-ups
+                        </p>
+                        <p><a class="btn btn-default" href="/User/Registration/UserRegistration">Register</a></p>
+                    </div>
+                    <div class="col-sm-4 footer-blurb-item">
+                        <h3 style="color: white"><span class="glyphicon glyphicon-alert"></span> More Cash</h3>
+                        <p>Some Write-ups
+                        </p>
+                        <p><a class="btn btn-default" href="/Security/Account/Login">Login</a></p>
+                    </div>
+                    <div class="col-sm-4 footer-blurb-item">
+                        <h3 style="color: white"><span class="glyphicon glyphicon-bitcoin"></span> Much Cash</h3>
+                        <p>Some Write-ups
+                        </p>
+                        <p><a class="btn btn-default" href="#">Be happy</a></p>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/Content/Web/js/jquery-1.11.3.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/Content/Web/js/bootstrap.min.js"></script>
+
+    <!-- IE10 viewport bug workaround -->
+    <script src="/Content/Web/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- Placeholder Images -->
+    <script src="/Content/Web/js/holder.min.js"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Firefox","requestId":"bcdf99a262cd40bb90fb64f169a4b35b"}
+</script>
+<script type="text/javascript" src="http://localhost:42883/d76d225e88e2438797fb3f8b4329f745/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>
+
+    </div>
+    <div class="row">
+        <hr />
+        <footer>
+            <p class="pull-left">&copy; 2017 - BigBankAlert</p>
+            <blockquote class="blockquote-reverse">
+                <p>Experience constatnt bank alerts!</p>
+                <small>BigBankAlert</small>
+            </blockquote>
+
+            
+        </footer>
+    </div>
+</div>
+
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+<script src="/Scripts/jquery-2.1.3.js"></script>
+<script src="/Scripts/jquery-ui-1.9.2.min.js"></script>
+<script src="/Scripts/jquery.validate.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <script src="/Scripts/bootstrap.js"></script>
+<script src="/Scripts/respond.js"></script>
+
+    
+</body>
+</html>

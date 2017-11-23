@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<!-- Template by Quackit.com -->
+<!-- Images by various sources under the Creative Commons CC0 license and/or the Creative Commons Zero license.
+Although you can use them, for a more unique website, replace these images with your own. -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Home - Henna</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    <link href="~/Content/css/custom.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Custom Fonts from Google -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="siteNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon-fire"></span>
+                    HENNA
+                </a>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    @*<li class="active">
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>*@
+                    <li>
+                        <button href="security/Account/Login" class="cta-button blue-shadow">
+                            Sell Your Product
+                        </button>
+                    </li>
+                    <li>
+                        <a href="Member/Registration/SignUp">Sign Up</a>
+                    </li>
+                    @*<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="about-us">
+                                <li><a href="#">IT Consultancy</a></li>
+                                <li><a href="#">Application Development</a></li>
+                                <li><a href="#">Business Management</a></li>
+                            </ul>
+                        </li>*@
+                    @*<li>
+                            <a href="#">Contact</a>
+                        </li>*@
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Let's Buy And Sell...</h1>
+                <p>Click below to explore.</p>
+                <a href="#" class="btn btn-primary btn-lg">CLICK HERE</a>
+                <div class="tr-banner-mobile section-before bg-image visible-xs hidden-md hidden-lg hidden-sm">
+                    <div class="container">
+                        <div class="banner-content text-center">
+
+                            <div class="banner-form">
+                                <form action="search.php">
+                                    <input type="text" name="q" class="form-control" placeholder="Type Your Search Keyword" style="background-color: rgba(255,255,255,0.7); ">
+                                    <input type="hidden" name="location" id="locationinput" class="form-control" value="all">
+                                    <div class="dropdown tr-change-dropdown" style="background-color: rgba(255,255,255,0.7); ">
+                                        <a data-toggle="dropdown" href="#" aria-expanded="false"><span class="change-text">All Locations</span><i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu tr-change">
+
+                                            <li><a href="#" onclick="setLocation('all')">All Locations</a></li>
+                                            <li><a href="#" onclick="setLocation('Anambra-')">Anambra </a></li>
+                                            <li><a href="#" onclick="setLocation('Awka')">Awka</a></li>
+                                            <li><a href="#" onclick="setLocation('AwkaAmawbia')">Awka/Amawbia</a></li>
+                                            <li><a href="#" onclick="setLocation('AwkaIfite')">Awka/Ifite</a></li>
+                                            <li><a href="#" onclick="setLocation('Enugu')">Enugu</a></li>
+                                            <li><a href="#" onclick="setLocation('EnuguCoal-city')">Enugu/Coal city</a></li>
+                                            <li><a href="#" onclick="setLocation('Esutagbani')">Esut/agbani</a></li>
+                                            <li><a href="#" onclick="setLocation('EsutEnugu')">Esut/Enugu</a></li>
+                                            <li><a href="#" onclick="setLocation('IMT')">IMT</a></li>
+                                            <li><a href="#" onclick="setLocation('Nkanu-')">Nkanu </a></li>
+                                            <li><a href="#" onclick="setLocation('Nsukka')">Nsukka</a></li>
+                                            <li><a href="#" onclick="setLocation('UNEC')">UNEC</a></li>
+                                            <li><a href="#" onclick="setLocation('Unizik-Temp-site-')">Unizik Temp site. </a></li>
+                                            <li><a href="#" onclick="setLocation('UNN')">UNN</a></li>
+                                        </ul>
+                                    </div><!-- /.category-change -->
+                                    <button type="submit" class="btn btn-primary" value="Search">Search</button>
+                                </form>
+                            </div><!-- /.banner-form -->
+                        </div><!--/. banner-content -->
+                    </div><!-- /.container -->
+                </div><!-- /.tr-banner -->
+            </div>
+        </div>
+    </header>
+    <!-- Intro Section -->
+    <section class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <span class="glyphicon glyphicon-apple" style="font-size: 60px"></span>
+                    <h2 class="section-heading">Completely synergizing resource for maximum client satisfiaction</h2>
+                    <p class="text-light">Professionally cultivate one-to-one customer service with robust ideas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content 1 -->
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img-responsive img-circle center-block" src="~Content/images2/hands-people-woman-working.jpg" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <h2 class="section-header">Best in Services</h2>
+                    <p class="lead text-muted">Dynamically innovating resource-leveling customer service for state of the art customer service.</p>
+                    <a href="#" class="btn btn-primary btn-lg">Know More</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Content 2 -->
+    <section class="content content-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2 class="section-header">High Reliability</h2>
+                    <p class="lead text-light">Strategically maintaining the high standards of the company and its reliability by the customers.</p>
+                    <a href="#" class="btn btn-default btn-lg">Test It</a>
+                </div>
+                <div class="col-sm-6">
+                    <img class="img-responsive img-circle center-block" src="~Content/images2/images/pexels-photo-327533.jpeg" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Promos -->
+    <div class="container-fluid">
+        <div class="row promo">
+            <a href="#">
+                <div class="col-md-4 promo-item item-1">
+                    <h3>
+                        We Advertise
+                    </h3>
+                </div>
+            </a>
+            <a href="#">
+                <div class="col-md-4 promo-item item-2">
+                    <h3>
+                        You Sell
+                    </h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="col-md-4 promo-item item-3">
+                    <h3>
+                        You Buy
+                    </h3>
+                </div>
+            </a>
+            <a href="#">
+                <div class="col-md-4 promo-item item-3">
+                    <h3>
+                        We Make Money.
+                    </h3>
+                </div>
+            </a>
+        </div>
+    </div><!-- /.container-fluid -->
+    <!-- Content 3 -->
+    @*<section class="content content-3">
+            <div class="container">
+                <h2 class="section-header"><span class="glyphicon glyphicon-pushpin text-primary"></span><br> Location</h2>
+                <p class="lead text-muted">No 2 obollo street Transekulu Enugu Enu Nigeria.</p>
+                <a href="#" class="btn btn-primary btn-lg">Check Now</a>
+            </div>
+        </section>*@
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-top section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2 text-center">
+                        <div class="footer-widget">
+                            <p><a href="#">FAQ</a></p>
+
+                        </div>
+                    </div><div class="col-sm-2 text-center">
+                        <div class="footer-widget">
+                            <p><a href="#">Terms And Conditions</a></p>
+
+                        </div>
+                    </div><div class="col-sm-2 text-center">
+                        <div class="footer-widget">
+                            <p><a href="#">Billing Policy</a></p>
+
+                        </div>
+                    </div><div class="col-sm-2 text-center">
+                        <div class="footer-widget">
+                            <p><a href="#">Contact Us</a></p>
+
+                        </div>
+                    </div><div class="col-sm-2 text-center">
+                        <div class="footer-widget">
+                            <p><a href="#">Safety Tips</a></p>
+
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.footer-top -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>Copyright © 2017 <a href="#">Henna.com</a> All rights reserved.</p>
+                </div>
+                <div class="footer-social pull-right">
+                    <ul class="tr-list">
+                        <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /.footer-bottom -->
+    </div><!-- /.footer -->    <!-- JS -->
+    <script src="~/Content/js/jquery-1.11.3.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="~/Content/js/jquery.easing.min.js"></script>
+    <!-- Custom Javascript -->
+    <script src="~/Content/js/custom.js"></script>
+</body>
+</html>

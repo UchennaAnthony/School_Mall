@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{484A51F5-29EE-4BF9-9521-0F16EBD78F2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchoolMall.Model</RootNamespace>
+    <AssemblyName>SchoolMall.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\ITEM_CATEGORY.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ITEM_DETAIL.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ITEM_TYPE.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LOCATION.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PERSON.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ROLE.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\School_MallEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>School_MallEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\School_MallEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\School_MallEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>School_MallEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SEARCHED_ITEM.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SEARCH_RESULT.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SECURITY_QUESTION.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SEX.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\USER.cs">
+      <DependentUpon>School_MallEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Enum.cs" />
+    <Compile Include="Model\ItemCategory.cs" />
+    <Compile Include="Model\ItemDetail.cs" />
+    <Compile Include="Model\ItemType.cs" />
+    <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\Message.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\SearchedItem.cs" />
+    <Compile Include="Model\SearchedResult.cs" />
+    <Compile Include="Model\SecurityQuestion.cs" />
+    <Compile Include="Model\Sex.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Value.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Translator\ItemCategorytranslator.cs" />
+    <Compile Include="Translator\ItemDetailTranslator.cs" />
+    <Compile Include="Translator\ItemTypeTranslator.cs" />
+    <Compile Include="Translator\LocationTranslator.cs" />
+    <Compile Include="Translator\PersonTranslator.cs" />
+    <Compile Include="Translator\RoleTranslator.cs" />
+    <Compile Include="Translator\SearchedItemTranslator.cs" />
+    <Compile Include="Translator\SearchedResultTranslator.cs" />
+    <Compile Include="Translator\SecurityQuestionTranslator.cs" />
+    <Compile Include="Translator\SexTranslator.cs" />
+    <Compile Include="Translator\TranslatorBase.cs" />
+    <Compile Include="Translator\UserTranslator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Entity\School_MallEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>School_MallEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Entity\School_MallEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>School_MallEntities.edmx</DependentUpon>
+      <LastGenOutput>School_MallEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Entity\School_MallEntities.edmx.diagram">
+      <DependentUpon>School_MallEntities.edmx</DependentUpon>
+    </None>
+    <None Include="Entity\School_MallEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>School_MallEntities.edmx</DependentUpon>
+      <LastGenOutput>School_MallEntities.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

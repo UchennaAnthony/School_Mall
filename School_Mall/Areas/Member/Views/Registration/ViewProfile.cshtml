@@ -1,0 +1,115 @@
+﻿@model School_Mall.Areas.Member.ViewModel.RegisterViewModel
+
+@{
+    ViewBag.Title = "ViewProfile";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div>
+                        @if (TempData["Message"] != null)
+                        {
+                            @Html.Partial("_Message", (SchoolMall.Model.Model.Message)TempData["Message"])
+                        }
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert in nomargin">
+                                        <h2><b>USER PROFILE</b></h2>
+                                        <p>The following form contains information about your account</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+
+
+                            @if (Model.User.ImageUrl == null)
+                            {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img alt="Picture" height="100" width="100" src="/Content/ImageFiles/defaultpersonimage1.png" style="border:1px solid #CCC" />
+                                    </div>
+                                </div>
+                                <br />
+                            }
+                            else
+                            {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img alt="Picture" height="100" width="100" src="@Model.User.ImageUrl" style="border:1px solid #CCC" />
+                                    </div>
+                                </div>
+                                <br />
+                            }
+
+
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Person.LastName, "Last Name: ", new { @class = "control-label" })
+                                    @Html.DisplayFor(model => model.Person.LastName, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Person.FirstName, "First Name: ", new { @class = "control-label" })
+                                    @Html.DisplayFor(model => model.Person.FirstName, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Person.OtherName, "Other Names: ", new { @class = "control-label" })
+                                    @Html.DisplayFor(model => model.Person.OtherName, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Person.Sex.SexName, "Gender: ", new { @class = "control-label" })
+                                    @Html.DisplayFor(model => model.Person.Sex.SexName, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Person.MobileNumber, "Phone Number: ", new { @class = "control-label" })
+                                    @Html.DisplayFor(model => model.Person.MobileNumber, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.User.Username, "Username: ", new { @class = "control-label" })
+                                    @Html.DisplayFor(model => model.User.Username, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.User.Email, "Email: ", new { @class = "control-label" })
+                                    @Html.DisplayFor(model => model.User.Email, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.User.SecurityQuestion.Question, "Security Question: ", new { @class = "control-label" })
+                                    @Html.DisplayFor(model => model.User.SecurityQuestion.Question, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.User.SecurityAnswer, "Security Answer: ", new { @class = "control-label" })
+                                    @Html.DisplayFor(model => model.User.SecurityAnswer, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="/Member/Registration/EditProfile" class="btn btn-primary btn-md">Edit</a>  |
+                                <a href="/Security/Account/Home" class="btn btn-primary btn-md">Home</a>
+                            </div>
+                        </center>
+                    </div>
+
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

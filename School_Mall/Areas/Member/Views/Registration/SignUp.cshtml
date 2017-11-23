@@ -1,0 +1,142 @@
+﻿@model School_Mall.Areas.Member.ViewModel.RegisterViewModel
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<br />
+<div class="row">
+    <div class="well col-xs-10 col-sm-10 col-md-8 col-xs-offset-1 col-sm-offset-1 col-md-offset-2 panel-body">
+
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        @if (TempData["Message"] != null)
+                        {
+                            @Html.Partial("Message", (SchoolMall.Model.Model.Message)TempData["Message"])
+                        }
+                    </div>
+                </div>
+
+                <div class=" text-default">
+                    <h1>
+                        <b>Registration Form</b>
+                    </h1>
+                </div>
+                <section id="loginForm">
+                    @using (Html.BeginForm("SignUp", "Registration", new { Area = "Member" }, FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <h5>Fill the form below to register</h5>
+                            <hr class="no-top-padding" />
+
+                            <div class="panel panel-primary form-horizontal">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Person.FirstName, "First Name", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(model => model.Person.FirstName, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.Person.FirstName, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Person.LastName, "Last Name", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(model => model.Person.LastName, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.Person.LastName, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Person.OtherName, "Other Name", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(model => model.Person.OtherName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Person.OtherName, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Person.MobileNumber, "Mobile Phone", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(model => model.Person.MobileNumber, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.Person.MobileNumber, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.User.Email, "Email", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(model => model.User.Email, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.User.Email, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Person.Sex.Id, "Sex", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.DropDownListFor(m => m.Person.Sex.Id, (IEnumerable<SelectListItem>)ViewBag.Sex, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Person.Sex.Id, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Person.ContactAddress, "Contact Address", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(model => model.Person.ContactAddress, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.Person.ContactAddress, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.User.Username, "Username", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(model => model.User.Username, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.User.Username, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.User.Password, "Password", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(model => model.User.Password, new { @class = "form-control", required = "required", type = "password" })
+                                            @Html.ValidationMessageFor(model => model.User.Password, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.User.SecurityQuestion.Id, "Security Question", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.DropDownListFor(m => m.User.SecurityQuestion.Id, (IEnumerable<SelectListItem>)ViewBag.SecurityQuestions, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(m => m.User.SecurityQuestion.Id, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.User.SecurityAnswer, "Answer", new { @class = "col-md-4 control-label" })
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(model => model.User.SecurityAnswer, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.User.SecurityAnswer, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Create" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+ @*@section Scripts {
+  @Scripts.Render("~/bundles/jqueryval")
+   }*@

@@ -1,0 +1,108 @@
+﻿@model School_Mall.Areas.Member.ViewModel.SaleViewModel
+
+@{
+    ViewBag.Title = "UploadItem";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+
+                    <div>
+                        @if (TempData["Msg"] != null)
+                        {
+                            <div class="alert alert-dismissible alert-info">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                @TempData["Msg"].ToString()
+                            </div>
+                        }
+                    </div>
+                    @using (Html.BeginForm("UploadItem", "Sale", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <p style="font-size:large"><i class="fa fa-bookmark"></i> Upload Your Product</p>
+                            </div>
+                            
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ItemDetail.ItemName, "Item Name*")
+                                        @Html.TextBoxFor(model => model.ItemDetail.ItemName, new { @class = "form-control", @required = "required" })
+                                        @Html.ValidationMessageFor(model => model.ItemDetail.ItemName)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ItemDetail.ItemDescription, "Description")
+                                        @Html.TextAreaFor(model => model.ItemDetail.ItemDescription, new { @class = "form-control", @required = "required" })
+                                        @Html.ValidationMessageFor(model => model.ItemDetail.ItemDescription)
+                                    </div>
+                                </div>
+                           
+                            
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ItemDetail.ItemType.ItemTypeName, "Type")
+                                        @Html.DropDownListFor(model => model.ItemDetail.ItemType.Id, (IEnumerable<SelectListItem>)ViewBag.ItemType, new { @class = "form-control", @required = "required" })
+                                        @Html.ValidationMessageFor(model => model.ItemDetail.ItemType.ItemTypeName)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ItemDetail.ItemCategory.ItemCategoryName, "Category")
+                                        @Html.DropDownListFor(model => model.ItemDetail.ItemCategory.Id, (IEnumerable<SelectListItem>)ViewBag.ItemCategory, new { @class = "form-control", @required = "required" })
+                                        @Html.ValidationMessageFor(model => model.ItemDetail.ItemCategory.ItemCategoryName)
+                                    </div>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ItemDetail.NumberOfItem, "Number Of Item*")
+                                        @Html.TextBoxFor(model => model.ItemDetail.NumberOfItem, new { @class = "form-control", @required = "required" })
+                                        @Html.ValidationMessageFor(model => model.ItemDetail.NumberOfItem)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ItemDetail.Price, "Price")
+                                        @Html.TextBoxFor(model => model.ItemDetail.Price, new { @class = "form-control", @required = "required" })
+                                        @Html.ValidationMessageFor(model => model.ItemDetail.Price)
+                                    </div>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ItemDetail.Location.LocationName, "Location")
+                                        @Html.DropDownListFor(model => model.ItemDetail.Location.Id, (IEnumerable<SelectListItem>)ViewBag.Location, new { @class = "form-control", @required = "required" })
+                                        @Html.ValidationMessageFor(model => model.ItemDetail.Location.LocationName)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.ItemDetail.ItemPath, "Select Picture*")
+                                    <input type="file" name="file" title="Upload Photo" class="form-control" required="required" />
+                                </div>
+                            
+                            <div class="form-horizontal">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Upload" class="btn btn-default" />
+                                    </div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                    }
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="School_MallModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ITEM_CATEGORY">
+          <Key>
+            <PropertyRef Name="Item_Categroy_Id" />
+          </Key>
+          <Property Name="Item_Categroy_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item_Category_Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Activated" Type="bit" />
+        </EntityType>
+        <EntityType Name="ITEM_DETAIL">
+          <Key>
+            <PropertyRef Name="Item_Id" />
+          </Key>
+          <Property Name="Item_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item_Name" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Item_Description" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Item_Type_Id" Type="int" Nullable="false" />
+          <Property Name="Item_Category_Id" Type="int" Nullable="false" />
+          <Property Name="Location_Id" Type="int" Nullable="false" />
+          <Property Name="Uploaded_Image_Url" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Time_Uploaded" Type="datetime" Nullable="false" />
+          <Property Name="Number_Of_Item" Type="int" />
+          <Property Name="Added_By" Type="bigint" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ITEM_TYPE">
+          <Key>
+            <PropertyRef Name="Item_Type_Id" />
+          </Key>
+          <Property Name="Item_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item_Type_Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Item_Type_Description" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="LOCATION">
+          <Key>
+            <PropertyRef Name="Location_Id" />
+          </Key>
+          <Property Name="Location_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Location_Name" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Location_Description" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="PERSON">
+          <Key>
+            <PropertyRef Name="Person_Id" />
+          </Key>
+          <Property Name="Person_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="First_Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Last_Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Other_Name" Type="varchar" MaxLength="100" />
+          <Property Name="Contact_Address" Type="varchar" MaxLength="150" />
+          <Property Name="Mobile_Number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Sex_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="Role_Id" />
+          </Key>
+          <Property Name="Role_Id" Type="int" Nullable="false" />
+          <Property Name="Role_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activated" Type="bit" />
+        </EntityType>
+        <EntityType Name="SEARCH_RESULT">
+          <Key>
+            <PropertyRef Name="Search_Result_Id" />
+          </Key>
+          <Property Name="Search_Result_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Search_Result_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Search_Result_Description" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="SEARCHED_ITEM">
+          <Key>
+            <PropertyRef Name="Searched_Item_Id" />
+          </Key>
+          <Property Name="Searched_Item_Id" Type="bigint" Nullable="false" />
+          <Property Name="Item_Id" Type="bigint" Nullable="false" />
+          <Property Name="Person_Id" Type="bigint" />
+          <Property Name="Date_Searched" Type="datetime" Nullable="false" />
+          <Property Name="Search_Result_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SECURITY_QUESTION">
+          <Key>
+            <PropertyRef Name="Security_Question_Id" />
+          </Key>
+          <Property Name="Security_Question_Id" Type="int" Nullable="false" />
+          <Property Name="Question" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SEX">
+          <Key>
+            <PropertyRef Name="Sex_Id" />
+          </Key>
+          <Property Name="Sex_Id" Type="int" Nullable="false" />
+          <Property Name="Sex_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activated" Type="bit" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Role_Id" Type="int" />
+          <Property Name="Image_Url" Type="varchar" MaxLength="150" />
+          <Property Name="Security_Question_Id" Type="int" Nullable="false" />
+          <Property Name="Security_Answer" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Person_Id" Type="bigint" />
+          <Property Name="Last_Login_Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ITEM_DETAIL_ITEM_CATEGORY">
+          <End Role="ITEM_CATEGORY" Type="Self.ITEM_CATEGORY" Multiplicity="1" />
+          <End Role="ITEM_DETAIL" Type="Self.ITEM_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM_CATEGORY">
+              <PropertyRef Name="Item_Categroy_Id" />
+            </Principal>
+            <Dependent Role="ITEM_DETAIL">
+              <PropertyRef Name="Item_Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_DETAIL_ITEM_DETAIL">
+          <End Role="ITEM_TYPE" Type="Self.ITEM_TYPE" Multiplicity="1" />
+          <End Role="ITEM_DETAIL" Type="Self.ITEM_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM_TYPE">
+              <PropertyRef Name="Item_Type_Id" />
+            </Principal>
+            <Dependent Role="ITEM_DETAIL">
+              <PropertyRef Name="Item_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_DETAIL_LOCATION">
+          <End Role="LOCATION" Type="Self.LOCATION" Multiplicity="1" />
+          <End Role="ITEM_DETAIL" Type="Self.ITEM_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOCATION">
+              <PropertyRef Name="Location_Id" />
+            </Principal>
+            <Dependent Role="ITEM_DETAIL">
+              <PropertyRef Name="Location_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_DETAIL_USER">
+          <End Role="USER" Type="Self.USER" Multiplicity="1" />
+          <End Role="ITEM_DETAIL" Type="Self.ITEM_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="User_Id" />
+            </Principal>
+            <Dependent Role="ITEM_DETAIL">
+              <PropertyRef Name="Added_By" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_PERSON">
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+          <End Role="PERSON1" Type="Self.PERSON" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="Person_Id" />
+            </Principal>
+            <Dependent Role="PERSON1">
+              <PropertyRef Name="Person_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_SEX">
+          <End Role="SEX" Type="Self.SEX" Multiplicity="1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEX">
+              <PropertyRef Name="Sex_Id" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="Sex_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SEARCHED_ITEM_ITEM_DETAIL">
+          <End Role="ITEM_DETAIL" Type="Self.ITEM_DETAIL" Multiplicity="1" />
+          <End Role="SEARCHED_ITEM" Type="Self.SEARCHED_ITEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM_DETAIL">
+              <PropertyRef Name="Item_Id" />
+            </Principal>
+            <Dependent Role="SEARCHED_ITEM">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SEARCHED_ITEM_PERSON">
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="0..1" />
+          <End Role="SEARCHED_ITEM" Type="Self.SEARCHED_ITEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="Person_Id" />
+            </Principal>
+            <Dependent Role="SEARCHED_ITEM">
+              <PropertyRef Name="Person_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SEARCHED_ITEM_SEARCH_RESULT">
+          <End Role="SEARCH_RESULT" Type="Self.SEARCH_RESULT" Multiplicity="1" />
+          <End Role="SEARCHED_ITEM" Type="Self.SEARCHED_ITEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEARCH_RESULT">
+              <PropertyRef Name="Search_Result_Id" />
+            </Principal>
+            <Dependent Role="SEARCHED_ITEM">
+              <PropertyRef Name="Search_Result_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_PERSON">
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="0..1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="Person_Id" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="Person_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_ROLE">
+          <End Role="ROLE" Type="Self.ROLE" Multiplicity="0..1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLE">
+              <PropertyRef Name="Role_Id" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="Role_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_SECURITY_QUESTION">
+          <End Role="SECURITY_QUESTION" Type="Self.SECURITY_QUESTION" Multiplicity="1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECURITY_QUESTION">
+              <PropertyRef Name="Security_Question_Id" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="Security_Question_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="School_MallModelStoreContainer">
+          <EntitySet Name="ITEM_CATEGORY" EntityType="Self.ITEM_CATEGORY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITEM_DETAIL" EntityType="Self.ITEM_DETAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITEM_TYPE" EntityType="Self.ITEM_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOCATION" EntityType="Self.LOCATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSON" EntityType="Self.PERSON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLE" EntityType="Self.ROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SEARCH_RESULT" EntityType="Self.SEARCH_RESULT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SEARCHED_ITEM" EntityType="Self.SEARCHED_ITEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SECURITY_QUESTION" EntityType="Self.SECURITY_QUESTION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SEX" EntityType="Self.SEX" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ITEM_DETAIL_ITEM_CATEGORY" Association="Self.FK_ITEM_DETAIL_ITEM_CATEGORY">
+            <End Role="ITEM_CATEGORY" EntitySet="ITEM_CATEGORY" />
+            <End Role="ITEM_DETAIL" EntitySet="ITEM_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITEM_DETAIL_ITEM_DETAIL" Association="Self.FK_ITEM_DETAIL_ITEM_DETAIL">
+            <End Role="ITEM_TYPE" EntitySet="ITEM_TYPE" />
+            <End Role="ITEM_DETAIL" EntitySet="ITEM_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITEM_DETAIL_LOCATION" Association="Self.FK_ITEM_DETAIL_LOCATION">
+            <End Role="LOCATION" EntitySet="LOCATION" />
+            <End Role="ITEM_DETAIL" EntitySet="ITEM_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITEM_DETAIL_USER" Association="Self.FK_ITEM_DETAIL_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="ITEM_DETAIL" EntitySet="ITEM_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_PERSON" Association="Self.FK_PERSON_PERSON">
+            <End Role="PERSON" EntitySet="PERSON" />
+            <End Role="PERSON1" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_SEX" Association="Self.FK_PERSON_SEX">
+            <End Role="SEX" EntitySet="SEX" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SEARCHED_ITEM_ITEM_DETAIL" Association="Self.FK_SEARCHED_ITEM_ITEM_DETAIL">
+            <End Role="ITEM_DETAIL" EntitySet="ITEM_DETAIL" />
+            <End Role="SEARCHED_ITEM" EntitySet="SEARCHED_ITEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SEARCHED_ITEM_PERSON" Association="Self.FK_SEARCHED_ITEM_PERSON">
+            <End Role="PERSON" EntitySet="PERSON" />
+            <End Role="SEARCHED_ITEM" EntitySet="SEARCHED_ITEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SEARCHED_ITEM_SEARCH_RESULT" Association="Self.FK_SEARCHED_ITEM_SEARCH_RESULT">
+            <End Role="SEARCH_RESULT" EntitySet="SEARCH_RESULT" />
+            <End Role="SEARCHED_ITEM" EntitySet="SEARCHED_ITEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_PERSON" Association="Self.FK_USER_PERSON">
+            <End Role="PERSON" EntitySet="PERSON" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_ROLE" Association="Self.FK_USER_ROLE">
+            <End Role="ROLE" EntitySet="ROLE" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_SECURITY_QUESTION" Association="Self.FK_USER_SECURITY_QUESTION">
+            <End Role="SECURITY_QUESTION" EntitySet="SECURITY_QUESTION" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="School_MallModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ITEM_CATEGORY">
+          <Key>
+            <PropertyRef Name="Item_Categroy_Id" />
+          </Key>
+          <Property Name="Item_Categroy_Id" Type="Int32" Nullable="false" />
+          <Property Name="Item_Category_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Activated" Type="Boolean" />
+          <NavigationProperty Name="ITEM_DETAIL" Relationship="Self.FK_ITEM_DETAIL_ITEM_CATEGORY" FromRole="ITEM_CATEGORY" ToRole="ITEM_DETAIL" />
+        </EntityType>
+        <EntityType Name="ITEM_DETAIL">
+          <Key>
+            <PropertyRef Name="Item_Id" />
+          </Key>
+          <Property Name="Item_Id" Type="Int64" Nullable="false" />
+          <Property Name="Item_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Type_Id" Type="Int32" Nullable="false" />
+          <Property Name="Item_Category_Id" Type="Int32" Nullable="false" />
+          <Property Name="Location_Id" Type="Int32" Nullable="false" />
+          <Property Name="Uploaded_Image_Url" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Time_Uploaded" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Number_Of_Item" Type="Int32" />
+          <Property Name="Added_By" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="ITEM_CATEGORY" Relationship="Self.FK_ITEM_DETAIL_ITEM_CATEGORY" FromRole="ITEM_DETAIL" ToRole="ITEM_CATEGORY" />
+          <NavigationProperty Name="ITEM_TYPE" Relationship="Self.FK_ITEM_DETAIL_ITEM_DETAIL" FromRole="ITEM_DETAIL" ToRole="ITEM_TYPE" />
+          <NavigationProperty Name="LOCATION" Relationship="Self.FK_ITEM_DETAIL_LOCATION" FromRole="ITEM_DETAIL" ToRole="LOCATION" />
+          <NavigationProperty Name="SEARCHED_ITEM" Relationship="Self.FK_SEARCHED_ITEM_ITEM_DETAIL" FromRole="ITEM_DETAIL" ToRole="SEARCHED_ITEM" />
+          <NavigationProperty Name="USER" Relationship="School_MallModel.FK_ITEM_DETAIL_USER" FromRole="ITEM_DETAIL" ToRole="USER" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="ITEM_TYPE">
+          <Key>
+            <PropertyRef Name="Item_Type_Id" />
+          </Key>
+          <Property Name="Item_Type_Id" Type="Int32" Nullable="false" />
+          <Property Name="Item_Type_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Type_Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ITEM_DETAIL" Relationship="Self.FK_ITEM_DETAIL_ITEM_DETAIL" FromRole="ITEM_TYPE" ToRole="ITEM_DETAIL" />
+        </EntityType>
+        <EntityType Name="LOCATION">
+          <Key>
+            <PropertyRef Name="Location_Id" />
+          </Key>
+          <Property Name="Location_Id" Type="Int32" Nullable="false" />
+          <Property Name="Location_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Location_Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ITEM_DETAIL" Relationship="Self.FK_ITEM_DETAIL_LOCATION" FromRole="LOCATION" ToRole="ITEM_DETAIL" />
+        </EntityType>
+        <EntityType Name="PERSON">
+          <Key>
+            <PropertyRef Name="Person_Id" />
+          </Key>
+          <Property Name="Person_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Other_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sex_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PERSON1" Relationship="Self.FK_PERSON_PERSON" FromRole="PERSON" ToRole="PERSON1" />
+          <NavigationProperty Name="PERSON2" Relationship="Self.FK_PERSON_PERSON" FromRole="PERSON1" ToRole="PERSON" />
+          <NavigationProperty Name="SEX" Relationship="Self.FK_PERSON_SEX" FromRole="PERSON" ToRole="SEX" />
+          <NavigationProperty Name="SEARCHED_ITEM" Relationship="Self.FK_SEARCHED_ITEM_PERSON" FromRole="PERSON" ToRole="SEARCHED_ITEM" />
+          <NavigationProperty Name="USER" Relationship="School_MallModel.FK_USER_PERSON" FromRole="PERSON" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="Role_Id" />
+          </Key>
+          <Property Name="Role_Id" Type="Int32" Nullable="false" />
+          <Property Name="Role_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Activated" Type="Boolean" />
+          <NavigationProperty Name="USER" Relationship="School_MallModel.FK_USER_ROLE" FromRole="ROLE" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="SEARCH_RESULT">
+          <Key>
+            <PropertyRef Name="Search_Result_Id" />
+          </Key>
+          <Property Name="Search_Result_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Search_Result_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Search_Result_Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SEARCHED_ITEM" Relationship="Self.FK_SEARCHED_ITEM_SEARCH_RESULT" FromRole="SEARCH_RESULT" ToRole="SEARCHED_ITEM" />
+        </EntityType>
+        <EntityType Name="SEARCHED_ITEM">
+          <Key>
+            <PropertyRef Name="Searched_Item_Id" />
+          </Key>
+          <Property Name="Searched_Item_Id" Type="Int64" Nullable="false" />
+          <Property Name="Item_Id" Type="Int64" Nullable="false" />
+          <Property Name="Person_Id" Type="Int64" />
+          <Property Name="Date_Searched" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Search_Result_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ITEM_DETAIL" Relationship="Self.FK_SEARCHED_ITEM_ITEM_DETAIL" FromRole="SEARCHED_ITEM" ToRole="ITEM_DETAIL" />
+          <NavigationProperty Name="PERSON" Relationship="Self.FK_SEARCHED_ITEM_PERSON" FromRole="SEARCHED_ITEM" ToRole="PERSON" />
+          <NavigationProperty Name="SEARCH_RESULT" Relationship="Self.FK_SEARCHED_ITEM_SEARCH_RESULT" FromRole="SEARCHED_ITEM" ToRole="SEARCH_RESULT" />
+        </EntityType>
+        <EntityType Name="SECURITY_QUESTION">
+          <Key>
+            <PropertyRef Name="Security_Question_Id" />
+          </Key>
+          <Property Name="Security_Question_Id" Type="Int32" Nullable="false" />
+          <Property Name="Question" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="USER" Relationship="School_MallModel.FK_USER_SECURITY_QUESTION" FromRole="SECURITY_QUESTION" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="SEX">
+          <Key>
+            <PropertyRef Name="Sex_Id" />
+          </Key>
+          <Property Name="Sex_Id" Type="Int32" Nullable="false" />
+          <Property Name="Sex_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Activated" Type="Boolean" />
+          <NavigationProperty Name="PERSON" Relationship="Self.FK_PERSON_SEX" FromRole="SEX" ToRole="PERSON" />
+        </EntityType>
+        <Association Name="FK_ITEM_DETAIL_ITEM_CATEGORY">
+          <End Role="ITEM_CATEGORY" Type="Self.ITEM_CATEGORY" Multiplicity="1" />
+          <End Role="ITEM_DETAIL" Type="Self.ITEM_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM_CATEGORY">
+              <PropertyRef Name="Item_Categroy_Id" />
+            </Principal>
+            <Dependent Role="ITEM_DETAIL">
+              <PropertyRef Name="Item_Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_DETAIL_ITEM_DETAIL">
+          <End Role="ITEM_TYPE" Type="Self.ITEM_TYPE" Multiplicity="1" />
+          <End Role="ITEM_DETAIL" Type="Self.ITEM_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM_TYPE">
+              <PropertyRef Name="Item_Type_Id" />
+            </Principal>
+            <Dependent Role="ITEM_DETAIL">
+              <PropertyRef Name="Item_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_DETAIL_LOCATION">
+          <End Role="LOCATION" Type="Self.LOCATION" Multiplicity="1" />
+          <End Role="ITEM_DETAIL" Type="Self.ITEM_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOCATION">
+              <PropertyRef Name="Location_Id" />
+            </Principal>
+            <Dependent Role="ITEM_DETAIL">
+              <PropertyRef Name="Location_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SEARCHED_ITEM_ITEM_DETAIL">
+          <End Role="ITEM_DETAIL" Type="Self.ITEM_DETAIL" Multiplicity="1" />
+          <End Role="SEARCHED_ITEM" Type="Self.SEARCHED_ITEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM_DETAIL">
+              <PropertyRef Name="Item_Id" />
+            </Principal>
+            <Dependent Role="SEARCHED_ITEM">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_PERSON">
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+          <End Role="PERSON1" Type="Self.PERSON" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="Person_Id" />
+            </Principal>
+            <Dependent Role="PERSON1">
+              <PropertyRef Name="Person_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_SEX">
+          <End Role="SEX" Type="Self.SEX" Multiplicity="1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEX">
+              <PropertyRef Name="Sex_Id" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="Sex_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SEARCHED_ITEM_PERSON">
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="0..1" />
+          <End Role="SEARCHED_ITEM" Type="Self.SEARCHED_ITEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="Person_Id" />
+            </Principal>
+            <Dependent Role="SEARCHED_ITEM">
+              <PropertyRef Name="Person_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SEARCHED_ITEM_SEARCH_RESULT">
+          <End Role="SEARCH_RESULT" Type="Self.SEARCH_RESULT" Multiplicity="1" />
+          <End Role="SEARCHED_ITEM" Type="Self.SEARCHED_ITEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEARCH_RESULT">
+              <PropertyRef Name="Search_Result_Id" />
+            </Principal>
+            <Dependent Role="SEARCHED_ITEM">
+              <PropertyRef Name="Search_Result_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="School_MallEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ITEM_CATEGORY" EntityType="Self.ITEM_CATEGORY" />
+          <EntitySet Name="ITEM_DETAIL" EntityType="Self.ITEM_DETAIL" />
+          <EntitySet Name="ITEM_TYPE" EntityType="Self.ITEM_TYPE" />
+          <EntitySet Name="LOCATION" EntityType="Self.LOCATION" />
+          <EntitySet Name="PERSON" EntityType="Self.PERSON" />
+          <EntitySet Name="ROLE" EntityType="Self.ROLE" />
+          <EntitySet Name="SEARCH_RESULT" EntityType="Self.SEARCH_RESULT" />
+          <EntitySet Name="SEARCHED_ITEM" EntityType="Self.SEARCHED_ITEM" />
+          <EntitySet Name="SECURITY_QUESTION" EntityType="Self.SECURITY_QUESTION" />
+          <EntitySet Name="SEX" EntityType="Self.SEX" />
+          <AssociationSet Name="FK_ITEM_DETAIL_ITEM_CATEGORY" Association="Self.FK_ITEM_DETAIL_ITEM_CATEGORY">
+            <End Role="ITEM_CATEGORY" EntitySet="ITEM_CATEGORY" />
+            <End Role="ITEM_DETAIL" EntitySet="ITEM_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITEM_DETAIL_ITEM_DETAIL" Association="Self.FK_ITEM_DETAIL_ITEM_DETAIL">
+            <End Role="ITEM_TYPE" EntitySet="ITEM_TYPE" />
+            <End Role="ITEM_DETAIL" EntitySet="ITEM_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITEM_DETAIL_LOCATION" Association="Self.FK_ITEM_DETAIL_LOCATION">
+            <End Role="LOCATION" EntitySet="LOCATION" />
+            <End Role="ITEM_DETAIL" EntitySet="ITEM_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SEARCHED_ITEM_ITEM_DETAIL" Association="Self.FK_SEARCHED_ITEM_ITEM_DETAIL">
+            <End Role="ITEM_DETAIL" EntitySet="ITEM_DETAIL" />
+            <End Role="SEARCHED_ITEM" EntitySet="SEARCHED_ITEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_PERSON" Association="Self.FK_PERSON_PERSON">
+            <End Role="PERSON" EntitySet="PERSON" />
+            <End Role="PERSON1" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_SEX" Association="Self.FK_PERSON_SEX">
+            <End Role="SEX" EntitySet="SEX" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SEARCHED_ITEM_PERSON" Association="Self.FK_SEARCHED_ITEM_PERSON">
+            <End Role="PERSON" EntitySet="PERSON" />
+            <End Role="SEARCHED_ITEM" EntitySet="SEARCHED_ITEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SEARCHED_ITEM_SEARCH_RESULT" Association="Self.FK_SEARCHED_ITEM_SEARCH_RESULT">
+            <End Role="SEARCH_RESULT" EntitySet="SEARCH_RESULT" />
+            <End Role="SEARCHED_ITEM" EntitySet="SEARCHED_ITEM" />
+          </AssociationSet>
+          <EntitySet Name="USER" EntityType="School_MallModel.USER" />
+          <AssociationSet Name="FK_ITEM_DETAIL_USER" Association="School_MallModel.FK_ITEM_DETAIL_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="ITEM_DETAIL" EntitySet="ITEM_DETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_PERSON" Association="School_MallModel.FK_USER_PERSON">
+            <End Role="PERSON" EntitySet="PERSON" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_ROLE" Association="School_MallModel.FK_USER_ROLE">
+            <End Role="ROLE" EntitySet="ROLE" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_SECURITY_QUESTION" Association="School_MallModel.FK_USER_SECURITY_QUESTION">
+            <End Role="SECURITY_QUESTION" EntitySet="SECURITY_QUESTION" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Role_Id" Type="Int32" />
+          <Property Name="Image_Url" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Security_Question_Id" Type="Int32" Nullable="false" />
+          <Property Name="Security_Answer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Person_Id" Type="Int64" />
+          <Property Name="Last_Login_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ITEM_DETAIL" Relationship="School_MallModel.FK_ITEM_DETAIL_USER" FromRole="USER" ToRole="ITEM_DETAIL" />
+          <NavigationProperty Name="PERSON" Relationship="School_MallModel.FK_USER_PERSON" FromRole="USER" ToRole="PERSON" />
+          <NavigationProperty Name="ROLE" Relationship="School_MallModel.FK_USER_ROLE" FromRole="USER" ToRole="ROLE" />
+          <NavigationProperty Name="SECURITY_QUESTION" Relationship="School_MallModel.FK_USER_SECURITY_QUESTION" FromRole="USER" ToRole="SECURITY_QUESTION" />
+        </EntityType>
+        <Association Name="FK_ITEM_DETAIL_USER">
+          <End Type="School_MallModel.USER" Role="USER" Multiplicity="1" />
+          <End Type="School_MallModel.ITEM_DETAIL" Role="ITEM_DETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="User_Id" />
+            </Principal>
+            <Dependent Role="ITEM_DETAIL">
+              <PropertyRef Name="Added_By" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_PERSON">
+          <End Type="School_MallModel.PERSON" Role="PERSON" Multiplicity="0..1" />
+          <End Type="School_MallModel.USER" Role="USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="Person_Id" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="Person_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_ROLE">
+          <End Type="School_MallModel.ROLE" Role="ROLE" Multiplicity="0..1" />
+          <End Type="School_MallModel.USER" Role="USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLE">
+              <PropertyRef Name="Role_Id" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="Role_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_SECURITY_QUESTION">
+          <End Type="School_MallModel.SECURITY_QUESTION" Role="SECURITY_QUESTION" Multiplicity="1" />
+          <End Type="School_MallModel.USER" Role="USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECURITY_QUESTION">
+              <PropertyRef Name="Security_Question_Id" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="Security_Question_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="School_MallModelStoreContainer" CdmEntityContainer="School_MallEntities">
+          <EntitySetMapping Name="ITEM_CATEGORY">
+            <EntityTypeMapping TypeName="School_MallModel.ITEM_CATEGORY">
+              <MappingFragment StoreEntitySet="ITEM_CATEGORY">
+                <ScalarProperty Name="Item_Categroy_Id" ColumnName="Item_Categroy_Id" />
+                <ScalarProperty Name="Item_Category_Name" ColumnName="Item_Category_Name" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITEM_DETAIL">
+            <EntityTypeMapping TypeName="School_MallModel.ITEM_DETAIL">
+              <MappingFragment StoreEntitySet="ITEM_DETAIL">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+                <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+                <ScalarProperty Name="Item_Description" ColumnName="Item_Description" />
+                <ScalarProperty Name="Item_Type_Id" ColumnName="Item_Type_Id" />
+                <ScalarProperty Name="Item_Category_Id" ColumnName="Item_Category_Id" />
+                <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+                <ScalarProperty Name="Uploaded_Image_Url" ColumnName="Uploaded_Image_Url" />
+                <ScalarProperty Name="Time_Uploaded" ColumnName="Time_Uploaded" />
+                <ScalarProperty Name="Number_Of_Item" ColumnName="Number_Of_Item" />
+                <ScalarProperty Name="Added_By" ColumnName="Added_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITEM_TYPE">
+            <EntityTypeMapping TypeName="School_MallModel.ITEM_TYPE">
+              <MappingFragment StoreEntitySet="ITEM_TYPE">
+                <ScalarProperty Name="Item_Type_Id" ColumnName="Item_Type_Id" />
+                <ScalarProperty Name="Item_Type_Name" ColumnName="Item_Type_Name" />
+                <ScalarProperty Name="Item_Type_Description" ColumnName="Item_Type_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOCATION">
+            <EntityTypeMapping TypeName="School_MallModel.LOCATION">
+              <MappingFragment StoreEntitySet="LOCATION">
+                <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+                <ScalarProperty Name="Location_Name" ColumnName="Location_Name" />
+                <ScalarProperty Name="Location_Description" ColumnName="Location_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSON">
+            <EntityTypeMapping TypeName="School_MallModel.PERSON">
+              <MappingFragment StoreEntitySet="PERSON">
+                <ScalarProperty Name="Person_Id" ColumnName="Person_Id" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="Other_Name" ColumnName="Other_Name" />
+                <ScalarProperty Name="Contact_Address" ColumnName="Contact_Address" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Sex_Id" ColumnName="Sex_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLE">
+            <EntityTypeMapping TypeName="School_MallModel.ROLE">
+              <MappingFragment StoreEntitySet="ROLE">
+                <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEARCH_RESULT">
+            <EntityTypeMapping TypeName="School_MallModel.SEARCH_RESULT">
+              <MappingFragment StoreEntitySet="SEARCH_RESULT">
+                <ScalarProperty Name="Search_Result_Id" ColumnName="Search_Result_Id" />
+                <ScalarProperty Name="Search_Result_Name" ColumnName="Search_Result_Name" />
+                <ScalarProperty Name="Search_Result_Description" ColumnName="Search_Result_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEARCHED_ITEM">
+            <EntityTypeMapping TypeName="School_MallModel.SEARCHED_ITEM">
+              <MappingFragment StoreEntitySet="SEARCHED_ITEM">
+                <ScalarProperty Name="Searched_Item_Id" ColumnName="Searched_Item_Id" />
+                <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+                <ScalarProperty Name="Person_Id" ColumnName="Person_Id" />
+                <ScalarProperty Name="Date_Searched" ColumnName="Date_Searched" />
+                <ScalarProperty Name="Search_Result_Id" ColumnName="Search_Result_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SECURITY_QUESTION">
+            <EntityTypeMapping TypeName="School_MallModel.SECURITY_QUESTION">
+              <MappingFragment StoreEntitySet="SECURITY_QUESTION">
+                <ScalarProperty Name="Security_Question_Id" ColumnName="Security_Question_Id" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEX">
+            <EntityTypeMapping TypeName="School_MallModel.SEX">
+              <MappingFragment StoreEntitySet="SEX">
+                <ScalarProperty Name="Sex_Id" ColumnName="Sex_Id" />
+                <ScalarProperty Name="Sex_Name" ColumnName="Sex_Name" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER">
+            <EntityTypeMapping TypeName="School_MallModel.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="Last_Login_Date" ColumnName="Last_Login_Date" />
+                <ScalarProperty Name="Person_Id" ColumnName="Person_Id" />
+                <ScalarProperty Name="Security_Answer" ColumnName="Security_Answer" />
+                <ScalarProperty Name="Security_Question_Id" ColumnName="Security_Question_Id" />
+                <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+                <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

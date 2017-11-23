@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="School_MallModelStoreContainer" CdmEntityContainer="School_MallEntities">
+    <EntitySetMapping Name="ITEM_CATEGORY">
+      <EntityTypeMapping TypeName="School_MallModel.ITEM_CATEGORY">
+        <MappingFragment StoreEntitySet="ITEM_CATEGORY">
+          <ScalarProperty Name="Item_Categroy_Id" ColumnName="Item_Categroy_Id" />
+          <ScalarProperty Name="Item_Category_Name" ColumnName="Item_Category_Name" />
+          <ScalarProperty Name="Activated" ColumnName="Activated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEM_DETAIL">
+      <EntityTypeMapping TypeName="School_MallModel.ITEM_DETAIL">
+        <MappingFragment StoreEntitySet="ITEM_DETAIL">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+          <ScalarProperty Name="Item_Description" ColumnName="Item_Description" />
+          <ScalarProperty Name="Item_Type_Id" ColumnName="Item_Type_Id" />
+          <ScalarProperty Name="Item_Category_Id" ColumnName="Item_Category_Id" />
+          <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+          <ScalarProperty Name="Uploaded_Image_Url" ColumnName="Uploaded_Image_Url" />
+          <ScalarProperty Name="Time_Uploaded" ColumnName="Time_Uploaded" />
+          <ScalarProperty Name="Number_Of_Item" ColumnName="Number_Of_Item" />
+          <ScalarProperty Name="Added_By" ColumnName="Added_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEM_TYPE">
+      <EntityTypeMapping TypeName="School_MallModel.ITEM_TYPE">
+        <MappingFragment StoreEntitySet="ITEM_TYPE">
+          <ScalarProperty Name="Item_Type_Id" ColumnName="Item_Type_Id" />
+          <ScalarProperty Name="Item_Type_Name" ColumnName="Item_Type_Name" />
+          <ScalarProperty Name="Item_Type_Description" ColumnName="Item_Type_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOCATION">
+      <EntityTypeMapping TypeName="School_MallModel.LOCATION">
+        <MappingFragment StoreEntitySet="LOCATION">
+          <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+          <ScalarProperty Name="Location_Name" ColumnName="Location_Name" />
+          <ScalarProperty Name="Location_Description" ColumnName="Location_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSON">
+      <EntityTypeMapping TypeName="School_MallModel.PERSON">
+        <MappingFragment StoreEntitySet="PERSON">
+          <ScalarProperty Name="Person_Id" ColumnName="Person_Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Other_Name" ColumnName="Other_Name" />
+          <ScalarProperty Name="Contact_Address" ColumnName="Contact_Address" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Sex_Id" ColumnName="Sex_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLE">
+      <EntityTypeMapping TypeName="School_MallModel.ROLE">
+        <MappingFragment StoreEntitySet="ROLE">
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Activated" ColumnName="Activated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEARCH_RESULT">
+      <EntityTypeMapping TypeName="School_MallModel.SEARCH_RESULT">
+        <MappingFragment StoreEntitySet="SEARCH_RESULT">
+          <ScalarProperty Name="Search_Result_Id" ColumnName="Search_Result_Id" />
+          <ScalarProperty Name="Search_Result_Name" ColumnName="Search_Result_Name" />
+          <ScalarProperty Name="Search_Result_Description" ColumnName="Search_Result_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEARCHED_ITEM">
+      <EntityTypeMapping TypeName="School_MallModel.SEARCHED_ITEM">
+        <MappingFragment StoreEntitySet="SEARCHED_ITEM">
+          <ScalarProperty Name="Searched_Item_Id" ColumnName="Searched_Item_Id" />
+          <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+          <ScalarProperty Name="Person_Id" ColumnName="Person_Id" />
+          <ScalarProperty Name="Date_Searched" ColumnName="Date_Searched" />
+          <ScalarProperty Name="Search_Result_Id" ColumnName="Search_Result_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SECURITY_QUESTION">
+      <EntityTypeMapping TypeName="School_MallModel.SECURITY_QUESTION">
+        <MappingFragment StoreEntitySet="SECURITY_QUESTION">
+          <ScalarProperty Name="Security_Question_Id" ColumnName="Security_Question_Id" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEX">
+      <EntityTypeMapping TypeName="School_MallModel.SEX">
+        <MappingFragment StoreEntitySet="SEX">
+          <ScalarProperty Name="Sex_Id" ColumnName="Sex_Id" />
+          <ScalarProperty Name="Sex_Name" ColumnName="Sex_Name" />
+          <ScalarProperty Name="Activated" ColumnName="Activated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER">
+      <EntityTypeMapping TypeName="School_MallModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="Last_Login_Date" ColumnName="Last_Login_Date" />
+          <ScalarProperty Name="Person_Id" ColumnName="Person_Id" />
+          <ScalarProperty Name="Security_Answer" ColumnName="Security_Answer" />
+          <ScalarProperty Name="Security_Question_Id" ColumnName="Security_Question_Id" />
+          <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

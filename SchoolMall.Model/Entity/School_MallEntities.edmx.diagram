@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77bda2a9eadc49afb659b9596c7f1a86" Name="Diagram1">
+        <EntityTypeShape EntityType="School_MallModel.ITEM_CATEGORY" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="School_MallModel.ITEM_DETAIL" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="School_MallModel.ITEM_TYPE" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="School_MallModel.LOCATION" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="School_MallModel.PERSON" Width="1.5" PointX="5.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="School_MallModel.ROLE" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="School_MallModel.SEARCH_RESULT" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="School_MallModel.SEARCHED_ITEM" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="School_MallModel.SECURITY_QUESTION" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="School_MallModel.SEX" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <AssociationConnector Association="School_MallModel.FK_ITEM_DETAIL_ITEM_CATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="School_MallModel.FK_ITEM_DETAIL_ITEM_DETAIL" ManuallyRouted="false" />
+        <AssociationConnector Association="School_MallModel.FK_ITEM_DETAIL_LOCATION" ManuallyRouted="false" />
+        <AssociationConnector Association="School_MallModel.FK_SEARCHED_ITEM_ITEM_DETAIL" ManuallyRouted="false" />
+        <AssociationConnector Association="School_MallModel.FK_PERSON_PERSON" ManuallyRouted="false" />
+        <AssociationConnector Association="School_MallModel.FK_PERSON_SEX" ManuallyRouted="false" />
+        <AssociationConnector Association="School_MallModel.FK_SEARCHED_ITEM_PERSON" ManuallyRouted="false" />
+        <AssociationConnector Association="School_MallModel.FK_SEARCHED_ITEM_SEARCH_RESULT" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="School_MallModel.USER" Width="1.5" PointX="7.5" PointY="7.75" />
+        <AssociationConnector Association="School_MallModel.FK_ITEM_DETAIL_USER" />
+        <AssociationConnector Association="School_MallModel.FK_USER_PERSON" />
+        <AssociationConnector Association="School_MallModel.FK_USER_ROLE" />
+        <AssociationConnector Association="School_MallModel.FK_USER_SECURITY_QUESTION" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

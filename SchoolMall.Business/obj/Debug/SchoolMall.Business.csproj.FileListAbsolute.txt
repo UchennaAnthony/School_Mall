@@ -1,0 +1,14 @@
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\SchoolMall.Business.dll.config
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\SchoolMall.Business.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\SchoolMall.Business.pdb
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\EntityFramework.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\SchoolMall.Data.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\SchoolMall.Model.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\SchoolMall.Data.pdb
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\SchoolMall.Model.pdb
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\EntityFramework.xml
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\obj\Debug\SchoolMall.Business.csprojResolveAssemblyReference.cache
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\obj\Debug\SchoolMall.Business.dll
+C:\Users\bebe\Documents\Visual Studio 2013\Projects\School_Mall\SchoolMall.Business\obj\Debug\SchoolMall.Business.pdb
